@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="ProjetPhoneDaveMuret.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjetPhoneDaveMuret"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.TopAppBar>
+        <CommandBar VerticalContentAlignment="Center" x:Uid="appBar" Content="">            
+        </CommandBar>
+    </Page.TopAppBar>
+
+    <StackPanel x:Name ="ConnectionPanel" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
+        <TextBlock x:Uid="userText" Text="" FontSize="20" Margin="0,50,0,0"></TextBlock>
+        <TextBox x:Name="userTextBox" TextWrapping="Wrap"  Margin="0,0,190,0" Text="{Binding UserName,Mode=TwoWay}"/>
+        
+        <TextBlock x:Uid="passwordText" Text="" FontSize="20" Margin="0,50,0,0"></TextBlock>        
+        <PasswordBox x:Name="passwordTextBox" Margin="0,0,190,0" Password="{Binding Password,Mode=TwoWay}"></PasswordBox>
+
+        <Button x:Uid="connectionButton" Content="" HorizontalAlignment="Center" Margin="0,80,0,0" Command="{Binding Verify}" ></Button>
+
+    </StackPanel>
+
+</Page>

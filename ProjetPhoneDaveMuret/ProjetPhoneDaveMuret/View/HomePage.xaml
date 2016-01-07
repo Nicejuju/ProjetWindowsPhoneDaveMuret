@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="ProjetPhoneDaveMuret.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjetPhoneDaveMuret"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.TopAppBar>
+        <CommandBar VerticalContentAlignment="Center" x:Uid="appBarHome" Content="">
+            <AppBarButton x:Name="addMusicianBtn" Icon="Add" Tapped ="addMusician_Tapped"> </AppBarButton>
+            <AppBarButton x:Name="deleteMusicianBtn" Icon="Remove" Tapped ="deleteMusician_Tapped"></AppBarButton>
+            <AppBarButton x:Name="researchMusicianBtn" Icon="Scan" Tapped ="researchMusician_Tapped"></AppBarButton>
+            <AppBarButton x:Name="researchInstrumentBtn" Icon="List" Tapped ="researchInstrument_Tapped"></AppBarButton>
+        </CommandBar>
+    </Page.TopAppBar>
+
+    <StackPanel>
+        <TextBlock HorizontalAlignment="Center" x:Uid="homeText" Text="" FontSize="30"></TextBlock>
+
+        <Image Height="350" Width="350" Source="/Ressources/Images/HomePicture.jpg"></Image>
+    </StackPanel>
+</Page>

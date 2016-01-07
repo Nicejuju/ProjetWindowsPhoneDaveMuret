@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="ProjetPhoneDaveMuret.ListMusicianByInstrPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjetPhoneDaveMuret"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:model="using:ProjetPhoneDaveMuret.Model">
+
+
+
+    <Page.TopAppBar>
+        <CommandBar VerticalContentAlignment="Center" x:Uid="appBarResearchMusician" Content="">
+            <AppBarButton x:Name="addMusicianBtn" Icon="Add" Tapped ="addMusician_Tapped"></AppBarButton>
+            <AppBarButton x:Name="deleteMusicianBtn" Icon="Remove" Tapped ="deleteMusician_Tapped"></AppBarButton>
+            <AppBarButton x:Name="researchInstrumentBtn" Icon="List" Tapped ="researchInstrument_Tapped"></AppBarButton>
+        </CommandBar>
+    </Page.TopAppBar>
+
+    <Grid x:Name="GridMusician" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Uid="MusicianTextBox" Text="" Style="{ThemeResource HeaderTextBlockStyle}"></TextBlock>
+        <ListView Margin="0,50,0,0" x:Name="ListMusicianByInstr" ItemClick="MusicianBtn_Click" IsItemClickEnabled="True">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="model:Musicien">
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="5"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="{Binding Nom}" Grid.Column="0" Grid.Row="0"></TextBlock>
+                        <TextBlock Text="  " Grid.Column="1" Grid.Row="0"></TextBlock>
+                        <TextBlock Text="{Binding Prenom}" Grid.Column="2"  Grid.Row="0"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

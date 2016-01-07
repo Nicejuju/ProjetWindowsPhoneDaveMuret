@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="ProjetPhoneDaveMuret.InstrumentDetails"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjetPhoneDaveMuret"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:model="using:ProjetPhoneDaveMuret.Model">
+
+    <Page.TopAppBar>
+        <CommandBar VerticalContentAlignment="Center" x:Uid="appBarResearchInstr" Content="">
+            <AppBarButton x:Name="addMusicianBtn" Icon="Add" Tapped ="addMusician_Tapped"></AppBarButton>
+            <AppBarButton x:Name="deleteMusicianBtn" Icon="Remove" Tapped ="deleteMusician_Tapped"></AppBarButton>
+            <AppBarButton x:Name="researchMusicianBtn" Icon="Scan" Tapped ="researchMusician_Tapped"></AppBarButton>
+        </CommandBar>
+    </Page.TopAppBar>
+ 
+
+    <StackPanel  x:Name="DetailsInstrumentPanel" Orientation="Vertical">
+
+        <TextBlock x:Name="InstrDetailsTextBox" Text="{Binding NomInstrument}" HorizontalAlignment="Center" FontSize="25"></TextBlock>
+        
+        <StackPanel Orientation="Vertical" Margin="0,15,0,0" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+
+                <Image Height="200" Width="200" Source="{Binding UrlPhoto}" Margin="60,0,0,0"></Image>
+
+                <Button x:Uid="ListenBtn" Content="" Tapped="ListenBtn_Tapped" Margin="20,0,0,0"></Button>
+                
+            </StackPanel>
+            
+            <Border Background="#d4d4d4" Height="270" Width="350" Margin="30,15,30,0">
+                <ScrollViewer>
+                    <TextBlock Text="{Binding Description}" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto"></TextBlock>
+                </ScrollViewer>
+                
+            </Border>
+          
+        </StackPanel>
+        
+    </StackPanel>
+</Page>
